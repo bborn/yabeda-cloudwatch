@@ -24,7 +24,7 @@ module Yabeda
           {
             metric_name: counter.name.to_s,
             timestamp: Time.now,
-            dimensions: tags.map { |tag_name, tag_value| { name: tag_name.to_s, value: tag_value } },
+            dimensions: tags.map { |tag_name, tag_value| { name: tag_name.to_s, value: tag_value.to_s } },
             unit: (counter.unit || :count).to_s.camelcase,
             value: increment,
           },
