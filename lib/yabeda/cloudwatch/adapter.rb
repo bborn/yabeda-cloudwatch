@@ -62,7 +62,7 @@ module Yabeda
           {
             metric_name: histogram.name.to_s,
             timestamp: Time.now,
-            dimensions: tags.map { |tag_name, tag_value| { name: tag_name.to_s, value: tag_value } },
+            dimensions: tags.map { |tag_name, tag_value| { name: tag_name.to_s, value: tag_value.to_s } },
             unit: (histogram.unit || :seconds).to_s.camelcase,
             value: value,
           },
